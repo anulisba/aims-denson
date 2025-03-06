@@ -4,28 +4,132 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: white;
+    background: #171717;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+.counter-wrapper {
+    position: relative;
+    height: 20%;
+    overflow: hidden;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
+.counter {
+    display: flex;
+    align-items: baseline;
+    color: #a5a5a5;
+    font-size: 9.5vw;
+    /* Responsive font size */
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    height: 1em;
+    line-height: 1;
+}
+
+.digit-container {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    width: 0.6em;
+    overflow: hidden;
+    margin: 0 0.05em;
+}
+
+.digit-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(0);
+}
+
+.digit {
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.percent-symbol {
+    font-size: 0.45em;
+    margin-left: 0.15em;
+    opacity: 1;
+    align-self: center;
+    font-weight: 700;
+    color: #a5a5a5;
+    position: relative;
+    top: -0.05em;
+}
+
+.loading-text {
+    position: absolute;
+    margin-top: 15%;
+    color: #6b6a6a;
+    font-size: 1.4vw;
+    /* Responsive font size */
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    animation: text-fade 1.8s ease-in-out infinite;
+}
+
+@keyframes text-fade {
+
+    0%,
+    100% {
+        opacity: 0.4;
     }
 
-    100% {
-        transform: rotate(360deg);
+    50% {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .counter {
+        font-size: 12vw;
+        /* Increase font size on tablets */
+    }
+
+    .loading-text {
+        font-size: 2vw;
+        /* Adjust font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .counter {
+        font-size: 14vw;
+        /* Larger font size for smaller screens */
+    }
+
+    .loading-text {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .counter {
+        font-size: 16vw;
+        /* Even larger font for mobile */
+    }
+
+    .loading-text {
+        font-size: 3vw;
+        margin-top: 15%;
     }
 }
