@@ -55,7 +55,15 @@ const AboutUs = () => {
         }, 3000);
         return () => clearInterval(interval);
     }, []);
-
+    const onButtonClick = () => {
+        const pdfUrl = "sample.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "aimsportswearbroucher.pdf"; // specify the filename
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
     return (
         <section className="about-us" id="about-us">
             <div className="about-content">
@@ -82,9 +90,15 @@ const AboutUs = () => {
                         while the school uniforms should emphasize neatness, comfort,
                         and professionalism, with durable materials that stand up to daily wear.
                     </p>
-                    <button className="contact-us-button">
-                        Contact Us
+                    <button
+                        className="contact-us-button"
+                        onClick={onButtonClick}
+                    >
+                        Download Brochure
                     </button>
+
+
+
                 </motion.div>
             </div>
             <div className="about-footer-container">
