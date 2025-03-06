@@ -1,35 +1,23 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import useImageLoader from './hooks/UseImageLoader';
 import Loader from './pages/Loader';
 import Landing from './pages/landing';
 
-import AIM_LOGO from './assets/images/AIM LOGO.png';
-import AboutUsBG from './assets/images/about-us-bg.jpg';
-import Uniform from './assets/images/young-boy-getting-back-school.jpg';
-import Gym from './assets/images/gym.jpg';
-import Sports from './assets/images/sports.jpg';
-import BgLanding from './assets/images/bg-landing.jpg';
-import Contact from './assets/images/contact.jpg';
-
-// List all image paths
-const imageSources = [
-  AIM_LOGO,
-  AboutUsBG,
-  Uniform,
-  Gym,
-  Sports,
-  BgLanding,
-  Contact
-];
-
 function App() {
-  const isLoaded = useImageLoader(imageSources);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Adjust time as needed
+
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, []);
 
   return (
     <div className="App">
-      {!isLoaded ? <Loader /> : <Landing />}
+      {isLoading ? <Loader /> : <Landing />}
     </div>
   );
 }
