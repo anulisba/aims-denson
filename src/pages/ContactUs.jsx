@@ -7,10 +7,21 @@ const ContactUs = () => {
                 <div className="contact-container">
                     <div className="contact-text">
                         <h1>Your Best Performance, Our Priority</h1>
-                        <h2>Be Unstoppable With Aims Sportswear</h2>
+                        <h2>Be Unstoppable With Aim Sportswear</h2>
                     </div>
                     <div>
-                        <button className="contact-us-section-button">Contact Us</button>
+                        <button
+                            className="contact-us-section-button"
+                            onClick={() => {
+                                window.open(
+                                    "https://wa.me/9446533322?text=" +
+                                    encodeURIComponent("Hi Aim sportswear\nI am interested in knowing more about your products"),
+                                    "_blank"
+                                );
+                            }}
+                        >
+                            Contact Us
+                        </button>
                     </div>
                 </div>
             </section>
@@ -20,9 +31,8 @@ const ContactUs = () => {
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.260046637213!2d76.33849927548228!3d10.400908989725963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f900068c6d51%3A0xedd6d212f9d1c466!2sAim%20sportswear!5e0!3m2!1sen!2sin!4v1741254044877!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
-
-                    allowFullScreen=""
                     loading="lazy"
+                    allowFullScreen=""
                     referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>

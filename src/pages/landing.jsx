@@ -59,7 +59,7 @@ const Landing = () => {
 
             <section className="landing-section" id="landing-section" ref={landingSectionRef}>
                 <div className="logo">
-                    <img src={logo} alt="Company Logo" />
+                    <img src={logo} alt="Company Logo" loading="lazy" />
                 </div>
                 <motion.div
                     className="landing-text"

@@ -1,16 +1,20 @@
-const path = require('path');
-const fs = require('fs');
-const Sitemap = require('react-router-sitemap').default;
+const path = require("path");
+const fs = require("fs");
+const { SitemapStream, streamToPromise } = require("sitemap");
 
-// Define your website's base URL and paths
-const baseUrl = 'https://aimssportswear.in';
-const paths = ["/", "/products", "/about", "/contact"];
+const baseUrl = "https://aimssportswear.in";
+const pages = ["/"]; // Only the root URL since it's an SPA
 
-// Generate sitemap
-const sitemap = new Sitemap(paths).build(baseUrl);
+const sitemapStream = new SitemapStream({ hostname: baseUrl });
 
-// Save sitemap to public folder
-const sitemapPath = path.join(__dirname, "public", "sitemap.xml");
-sitemap.save(sitemapPath); // ✅ Use the save method to correctly write XML
+pages.forEach((page) => {
+    sitemapStream.write({ url: page, changefreq: "daily", priority: 1.0 });
+});
 
-console.log(`✅ Sitemap generated successfully at ${sitemapPath}`);
+sitemapStream.end();
+
+streamToPromise(sitemapStream).then((sitemap) => {
+    const sitemapPath = path.join(__dirname, "public", "sitemap.xml");
+    fs.writeFileSync(sitemapPath, sitemap.toString());
+    console.log(`✅ Sitemap generated successfully at ${sitemapPath}`);
+});

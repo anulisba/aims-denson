@@ -142,6 +142,16 @@ background-position: center; */
     margin: 0 auto;
 }
 
+.about-content-sub {
+
+    align-items: center;
+    gap: 2rem;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    padding: 0;
+    max-width: 90%;
+}
+
 /* Image Container */
 .about-image {
 
@@ -748,9 +758,19 @@ html {
         padding: 2rem;
     }
 
+    .about-content-sub {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     .about-image,
     .about-text {
         flex: 1 1 100%;
+    }
+
+    .about-image img {
+        width: 300px;
+
     }
 
     .about-text {
@@ -773,7 +793,7 @@ html {
     }
 
     .sidebar {
-        width: 100%;
+        width: 60%;
         left: -100%;
     }
 

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import about_us_img from '../assets/images/about-us-bg.jpg';
+import about_us_2 from '../assets/images/360_F_250565045_WKeqiOIMeCGq7HBdHtz316Z89A1JFYic.webp';
 import { motion, AnimatePresence } from "framer-motion";
 
 const sentences = [
-    "AIM FOR EXCELLENCE",
-    "ACHIEVE WITH POWER",
-    "INSPIRE AND EMPOWER"
+    "BEST SPORTS WEAR IN THRISSUR",
+    "AFFORDABLE GYM WEAR",
+    "PREMIUM SPORTS APPAREL",
+    "TOP-QUALITY GYM WEARS IN KERALA",
+    "SPORTS UNIFORM AND CUSTOM JERSYES",
 ];
 
 const containerVariants = {
@@ -73,7 +76,7 @@ const AboutUs = () => {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     className="about-image"
                 >
-                    <img src={about_us_img} alt="About us" />
+                    <img src={about_us_img} alt="About us" loading="lazy" />
                 </motion.div>
                 <motion.div
                     initial={{ x: "50%", opacity: 0 }}
@@ -82,13 +85,7 @@ const AboutUs = () => {
                     className="about-text"
                 >
                     <h2><span className="h2-capital">A</span>BOUT <span className="h2-capital">U</span>S</h2>
-                    <p>Develop a branding concept for a business specializing in high-quality sportswear and school
-                        uniforms.
-                        The brand should convey a sense of versatility, blending style, comfort, and durability.
-                        The sportswear side should focus on performance-driven apparel for athletes,
-                        with features like moisture-wicking fabric, breathability, and flexibility,
-                        while the school uniforms should emphasize neatness, comfort,
-                        and professionalism, with durable materials that stand up to daily wear.
+                    <p>At AIM sportswear, we're passionate about creating high-quality sportswear that helps individuals and teams perform at their best. Since our inception in 2010, we've been dedicated to designing and manufacturing exceptional sportswear that combines comfort, style, and functionality.
                     </p>
                     <button
                         className="contact-us-button"
@@ -98,7 +95,53 @@ const AboutUs = () => {
                     </button>
 
 
+                </motion.div>
+            </div>
+            <div className="about-content">
+                <motion.div
+                    initial={{ x: "-100%", opacity: 0 }}
+                    whileInView={{ x: "0%", opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="about-text"
+                >
+                    <h2><span className="h2-capital">O</span>UR <span className="h2-capital">S</span>TORY</h2>
+                    <p>At AIM sportswear, we're passionate about creating high-quality sportswear that helps individuals and teams perform at their best. Since our inception in 2010, we've been dedicated to designing and manufacturing exceptional sportswear that combines comfort, style, and functionality.
+                    </p>
 
+
+                </motion.div>
+                <motion.div
+
+                    initial={{ x: "50%", opacity: 0 }}
+                    whileInView={{ x: "0%", opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="about-image"
+                >
+                    <img src={about_us_2} alt="About us" loading="lazy" />
+                </motion.div>
+            </div>
+            <div className="about-content-sub">
+                <motion.div
+                    initial={{ y: "50%", opacity: 0 }}
+                    whileInView={{ y: "0%", opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="about-text"
+                >
+                    <h2 style={{ textAlign: "center" }}><span className="h2-capital">O</span>UR <span className="h2-capital">C</span>OMMITMENT</h2>
+                    <p style={{ textAlign: "center" }}>At AIM sportswear, we're committed to delivering exceptional quality, comfort, and style in every product we create. We use only the finest materials, employ cutting-edge manufacturing techniques, and adhere to rigorous quality control standards to ensure that our products meet the highest standards.
+                    </p>
+                </motion.div>
+            </div>
+            <div className="about-content-sub">
+                <motion.div
+                    initial={{ y: "50%", opacity: 0 }}
+                    whileInView={{ y: "0%", opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="about-text"
+                >
+                    <h2 style={{ textAlign: "center" }}><span className="h2-capital">O</span>UR <span className="h2-capital">M</span>ISSION</h2>
+                    <p style={{ textAlign: "center" }}>Our mission is to empower individuals and teams to reach their full potential by providing them with high-quality sportswear that inspires confidence, comfort, and performance.
+                    </p>
                 </motion.div>
             </div>
             <div className="about-footer-container">

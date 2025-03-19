@@ -65,7 +65,7 @@ const OurProducts = () => {
                                     transition={{ duration: 0.8, delay: index + 1 * 0.5 }}
 
                                 >
-                                    <img src={product.img} alt={product.label} />
+                                    <img src={product.img} alt={product.label} loading="lazy" />
                                     <p>{product.label}</p>
                                 </motion.div>
                             ))}
@@ -102,7 +102,7 @@ const OurProducts = () => {
                             return (
                                 <SwiperSlide key={index} style={{ top: "30px" }} className="team-slide">
                                     <div className="image-container">
-                                        <img src={img} alt="Band Performing" />
+                                        <img src={img} alt="Thrissur best sports wear" loading="lazy" />
                                         {/* <div className="image-overlay"></div> */}
                                     </div>
                                 </SwiperSlide>
