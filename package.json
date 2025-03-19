@@ -3,20 +3,26 @@
   "name": "aimsportswear",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-sitemap": "node sitemap-generator.js"
   },
   "dependencies": {
     "framer-motion": "^12.4.10",
+    "fs": "^0.0.1-security",
     "gh-pages": "^6.3.0",
+    "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-helmet-async": "^2.0.5",
+    "react-router-sitemap": "^1.2.0",
+    "sitemap-webpack-plugin": "^1.1.1",
     "swiper": "^11.2.5"
   },
   "devDependencies": {

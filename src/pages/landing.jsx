@@ -7,6 +7,7 @@ import AboutUs from './AboutUs';
 import OurProducts from './OurProducts';
 import ContactUs from './ContactUs';
 import { motion } from 'framer-motion';
+import SEO from '../../SEO';
 const Landing = () => {
     const landingSectionRef = useRef(null);
     const [isSidebarActive, setIsSidebarActive] = useState(false);
@@ -44,6 +45,11 @@ const Landing = () => {
     const words = text.split(" ");
     return (
         <>
+            <SEO
+                title="Aim Sportswear - Best Sports Wear in Thrissur"
+                description="Find the best quality sportswear in Thrissur. Shop premium fitness gear and accessories at affordable prices."
+                keywords="AIM Sportswear, sportswear in Thrissur, buy sports gear, best fitness clothing"
+            />
             <Header toggleSidebar={toggleSidebar} />
             <Sidebar
                 isActive={isSidebarActive}
