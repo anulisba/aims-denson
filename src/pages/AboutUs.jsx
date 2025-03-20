@@ -105,7 +105,7 @@ const AboutUs = () => {
                     className="about-text"
                 >
                     <h2><span className="h2-capital">O</span>UR <span className="h2-capital">S</span>TORY</h2>
-                    <p>At AIM sportswear, we're passionate about creating high-quality sportswear that helps individuals and teams perform at their best. Since our inception in 2010, we've been dedicated to designing and manufacturing exceptional sportswear that combines comfort, style, and functionality.
+                    <p>Our journey began with a simple yet ambitious goal: to provide top-notch sportswear that meets the diverse needs of schools, teams, and individuals. Over the years, we've worked tirelessly to build a reputation for excellence, reliability, and customer satisfaction.
                     </p>
 
 
