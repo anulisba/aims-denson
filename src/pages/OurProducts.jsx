@@ -12,7 +12,8 @@ import t2 from '../assets/images/t2.jpeg'
 import t3 from '../assets/images/t3.jpeg'
 import t4 from '../assets/images/t4.jpeg'
 import t5 from '../assets/images/t6.jpeg'
-import t6 from '../assets/images/t6.jpeg'
+import t6 from '../assets/images/t5.jpeg'
+
 const OurProducts = () => {
     const teamImages = [t1, t2, t3, t4, t5, t6];
     const [index, setIndex] = useState(0);
